@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Quicksand:wght@500&display=swap');
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #b2afff;
+  padding: 20px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navigation-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  list-style: none;
+  padding-right: 40px;
+}
+
+.navigation-bar-item {
+  padding-right: 30px;
+}
+
+.navigation-bar-item a {
+  font-family: 'Concert One', cursive;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navigation-bar li:hover ul {
+  display: block;
+  opacity: 1;
+  transition: 1s all ease-in-out;
+}
+
+.navigation-bar li ul {
+  display: none;
+  opacity: 0;
+}
+
+.navigation-bar li ul li {
+  padding: 5px;
+}
+
+.item-book, .item-magazine{
+  padding: 15px;
+  background-color: #b2afff;
+  list-style: none;
+  text-decoration: none;
+  position: absolute;
+  min-width: 110px;
+}
+
+.item:hover{
+  background-color: #9b95ff;
+}
+
+.shopping-cart {
+  position: relative;
+  width: 30px;
+  height: 20px;
+  font-size: 22px;
+  margin-right: 80px;
+}
+
+.shopping-cart .shopping-cart-quantity {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  text-align: center;
+  background-color: #ff4459;
+  border-radius: 100%;
+  font-family: 'Concert One', cursive;
+  font-size: 10px;
+  color: #ffffff;
+}
+
+.logo-container img {
+  width: 250px;
+  max-width: 100%;  
+  margin-left: 80px;
+}
