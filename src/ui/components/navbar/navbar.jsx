@@ -6,7 +6,7 @@ export const Navbar = () => {
         <>
     <header>
         <div className="logo-container">
-            <img src={Logo} alt="" />
+            <a href="/"><img src={Logo} alt="" /></a>
         </div>
         <nav className="navigation">
             <ul className="navigation-bar">
@@ -14,30 +14,17 @@ export const Navbar = () => {
                     <a href="/">Inicio</a>
                 </li>
                 <li className="navigation-bar-item">
-                    <a href="/">Libros</a>
+                    <a href="/catalogo">Libros</a>
                     <ul className="item-book">
-                        <li className="item"><a href="/">Novelas</a></li>
-                        <li className="item"><a href="/">Poéticos</a></li>
-                        <li className="item"><a href="/">Aventura</a></li>
-                        <li className="item"><a href="/">Superación Personal</a></li>
-                        <li className="item"><a href="/">Científicos</a></li>
-                        <li className="item"><a href="/">Académicos</a></li>
+                        <li className="item"><a href="/novelas">Novelas</a></li>
+                        <li className="item"><a href="/poeticos">Poéticos</a></li>
+                        <li className="item"><a href="/superación-personal">Superación Personal</a></li>
+                        <li className="item"><a href="/cientificos">Científicos</a></li>
+                        <li className="item"><a href="/academicos">Académicos</a></li>
                     </ul>
                 </li>
                 <li className="navigation-bar-item">
-                    <a href="/">Revistas</a>
-                    <ul className="item-magazine">
-                        <li className="item"><a href="/">Entretenimiento</a></li>
-                        <li className="item"><a href="/">Académicas</a></li>
-                        <li className="item"><a href="/">Farándula</a></li>
-                        <li className="item"><a href="/">Negocios</a></li>
-                    </ul>
-                </li>
-                <li className="navigation-bar-item">
-                    <a href="/">Lo Más Vendido</a>
-                </li>
-                <li className="navigation-bar-item">
-                    <a href="/">Contacto</a>
+                    <a href="/ofertas">Lo Más Vendido</a>
                 </li>
             </ul>
             <CartWidget />
