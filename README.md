@@ -39,3 +39,6 @@ Integración e instalación local de Firebase en la web app. \
 ### `useNavigate`
 
 ## Diseño ❤️
+![img](https://raw.githubusercontent.com/GisellMelissa/E-Commerce-React-JS/main/public/view-products.png)
+![img](https://raw.githubusercontent.com/GisellMelissa/E-Commerce-React-JS/main/public/view-cart.png)
+![img](https://raw.githubusercontent.com/GisellMelissa/E-Commerce-React-JS/main/public/view-cart2.png)
