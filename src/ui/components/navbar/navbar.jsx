@@ -2,6 +2,7 @@ import { CartWidget } from "./cart-widget";
 import Logo from "../../assets/Logo-Oasis-Literario2.png";
 
 export const Navbar = () => {
+
     return (
         <>
     <header>
@@ -14,17 +15,14 @@ export const Navbar = () => {
                     <a href="/">Inicio</a>
                 </li>
                 <li className="navigation-bar-item">
-                    <a href="/catalogo">Libros</a>
+                    <a href="/catalogo">Libros Categorías</a>
                     <ul className="item-book">
-                        <li className="item"><a href="/novelas">Novelas</a></li>
-                        <li className="item"><a href="/poeticos">Poéticos</a></li>
-                        <li className="item"><a href="/superación-personal">Superación Personal</a></li>
-                        <li className="item"><a href="/cientificos">Científicos</a></li>
-                        <li className="item"><a href="/academicos">Académicos</a></li>
+                        <li className="item"><a href="/category/jcU1waffiR3Hn73Q6i09">Novelas</a></li>
+                        <li className="item"><a href="/category/i4aK4SzIDFuQwHGXgnMM">Poesía</a></li>
+                        <li className="item"><a href="/category/aZfpqR7XVOConLE8c0m6">Superación Personal</a></li>
+                        <li className="item"><a href="/category/G6IuLfUYNkKkQgXFgjEj">Educativos</a></li>
+                        <li className="item"><a href="/category/JUlwjlPj4tNYDWzeDkAE">Cuentos</a></li>
                     </ul>
-                </li>
-                <li className="navigation-bar-item">
-                    <a href="/ofertas">Lo Más Vendido</a>
                 </li>
             </ul>
             <CartWidget />

@@ -1,30 +1,62 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+
+import { getFirestore, collection, getDocs, query, where } from "firebase/firestore";
+import app from "./../config/firebase";
+import CartContext from "../components/cart-context/cart-context";
 
 export const Products = () => {
     const [products, setProducts] = useState([]);
-
+    const { changeCountCart } = useContext(CartContext.Consumer);
     const navigate = useNavigate();
+    const params = useParams();
+    let categoryId = null;
+    if (params.category) {
+        categoryId = params.category;
+    }
     
+    const getProductList = () => {
+        const database = getFirestore(app);
+        const productsCollection = collection(database, 'productos');
+        let queryData;
+        if (categoryId) {
+            queryData = query(productsCollection, where('categoryID', '==', categoryId));
+        } else {
+            queryData = query(productsCollection);
+        }
+        
+        getDocs(queryData).then(res => {
+            const resultados = res.docs.map((result) => {
+                let resultmap = {...result.data()}
+                resultmap.id = result.id;
+                return resultmap;
+            });
+            setProducts(resultados);
+        }).catch(error => console.warn(error));
+    };
+   
     useEffect(() => {
         if(products.length === 0) {
-            fetch('https://api.mercadolibre.com/sites/MLA/search?q=libros', {
-                method: 'GET'
-            }).then((res) => {
-                return res.json();
-            }).then((res) => {
-                setProducts(res.results);
-                console.log(products);
-                console.log('res',res);
-            }).catch((error) => {
-                console.log(error);
-            });
+            getProductList();
         }
     }, []);
 
     const handleClick = (productId) => {
-        console.log(productId);
         navigate(`/product/${productId}`);
+    }
+
+    const handleAddToCart = (product) => {
+        let cartProducts = [];
+        if(localStorage.getItem('cart-products')){
+            cartProducts = JSON.parse(localStorage.getItem('cart-products'));
+        } 
+        
+        if (Array.isArray(cartProducts)) {
+            cartProducts.push(product);
+            localStorage.setItem('cart-products', JSON.stringify(cartProducts));
+        }   
+
+        changeCountCart(cartProducts.length);
     }
 
     return (<> 
@@ -34,12 +66,12 @@ export const Products = () => {
                     products.map((product) => (
                         <li className="item-card" key={product.id}>
                             <div>
-                            <img className="img-products" src={product.thumbnail} /> 
+                            <img className="img-products" src={product.image} /> 
                                 <div className="title-products">{product.title}</div>
                                 <div className="price-products">$ {product.price}</div>
                             </div>
                             <button className="button-details" onClick={() => handleClick(product.id)}>Ver detalles del producto</button>
-                            <button className="add-cart">Añadir al carrito</button>
+                            <button className="add-cart" onClick={() => handleAddToCart(product)}>Añadir al carrito</button>
                         </li>
                     ))
                 }

@@ -63,7 +63,7 @@ header {
 }
 
 .navigation-bar-item {
-  padding-right: 30px;
+  padding-right: 20px;
 }
 
 .navigation-bar-item a {
@@ -109,6 +109,12 @@ header {
   margin-right: 80px;
 }
 
+@media (max-width: 520px) {
+  .shopping-cart {
+    margin-right: 20px;
+  }
+}
+
 .shopping-cart .shopping-cart-quantity {
   position: absolute;
   top: 0;
@@ -129,6 +135,24 @@ header {
   margin-left: 80px;
 }
 
+@media (max-width: 520px) {
+  .logo-container img {
+    width: 250px;
+    max-width: 100%;  
+    margin-left: 0px;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 900px) {
+  .logo-container img {
+    width: 250px;
+    max-width: 100%;  
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+}
+
 .card-products{
   font-family: Quicksand;
   list-style: none;
@@ -140,6 +164,16 @@ header {
   grid-gap: 1em;
   height: 800px;
   padding: 2em;
+}
+
+@media (max-width: 520px){
+  .card-products {
+    display: grid;
+    grid-template-columns: 210px 210px;
+    grid-template-rows: 350px 350px;
+    justify-content: center;
+    grid-gap: 1em;
+  }
 }
 
 .item-card{
@@ -163,6 +197,7 @@ header {
   margin: 0px 20px 10px 20px ;
   background-color: #FF8B8B;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .img-products{
@@ -171,9 +206,10 @@ header {
   width: 40%;
 }
 
-.img-details-products{
+.img-details-products img {
   margin-top: 30px;
   margin-left: 30px;
+  width: 380px;
 }
 
 .title-products{
@@ -183,7 +219,7 @@ header {
   font-size: 14px;
 }
 
-.title-details-products{
+.details-products{
   font-family: Quicksand;
   margin: 30px 0px 20px 30px;
 }
@@ -207,11 +243,117 @@ header {
 .title-results{
   margin-top: 50px;
   font-family: Quicksand;
-  color: #2b2b2b;
+  color: #303030;
   text-align: center;
 }
 
-.description-products{
+#invoice{
+  position: relative;
+  margin: 0 auto;
+  width: 950px;
+  background: #FFF;
+}
+
+[id*='invoice-']{
+  border-bottom: 1px solid #EEE;
+  padding: 30px;
+}
+
+#invoice-top{min-height: 120px;}
+#invoice-mid{min-height: 120px;}
+#invoice-bot{ min-height: 250px;}
+
+.logo{
+  float: left;
+	height: 60px;
+	width: 60px;
+	background: url(http://michaeltruong.ca/images/logo1.png) no-repeat;
+	background-size: 60px 60px;
+}
+
+.clientlogo{
+  float: left;
+	height: 60px;
+	width: 60px;
+	background: url(http://michaeltruong.ca/images/client.jpg) no-repeat;
+	background-size: 60px 60px;
+  border-radius: 50px;
+}
+
+.info{
+  display: block;
+  float:left;
+  margin-left: 20px;
+}
+
+.title{
+  float: right;
+}
+
+.title p{text-align: right;}
+#project{margin-left: 52%;}
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td{
+  padding: 5px 0 5px 15px;
+  border: 1px solid rgb(192, 192, 192)
+}
+
+.tabletitle{
+  padding: 5px;
+  background: #ffe5e5;
+  color: #2b2b2b;
   font-family: Quicksand;
-  margin: 10px 0px 20px 30px;
+}
+
+.service{border: 1px solid #EEE;}
+.item{width: 50%;}
+.itemtext{font-size: .9em;}
+
+#legalcopy{
+  margin-top: 30px;
+}
+
+.effect2{
+  position: relative;
+}
+
+.effect2:before, .effect2:after{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+.effect2:after{
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+
+.legal{
+  width:70%;
+}
+
+.payment{
+  color: #d42d2d;
 }
